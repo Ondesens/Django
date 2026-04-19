@@ -1,0 +1,172 @@
+/* =========================
+   BASE
+========================= */
+
+body {
+    background: #f6f7fb;
+}
+
+/* заголовки */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #1f3b57;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0 10px;
+    color: #1f3b57;
+}
+
+/* описание */
+p {
+    text-align: center;
+    color: #555;
+}
+
+/* линия */
+hr {
+    width: 60%;
+    margin: 20px auto;
+    border: none;
+    height: 1px;
+    background: #ddd;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.blog-card {
+    width: 100%;
+    max-width: 750px;
+    margin: 15px 0;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+/* картинка */
+.blog-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* заголовок */
+.blog-card a {
+    display: block;
+    padding: 15px 20px 5px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f3b57;
+    text-decoration: none;
+}
+
+.blog-card a:hover {
+    text-decoration: underline;
+}
+
+/* описание */
+.blog-card p {
+    padding: 0 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* дата */
+.blog-card small {
+    padding: 10px 0 10px;
+    color: #888;
+}
+
+/* =========================
+   GLOBAL BUTTON (оставляем как есть)
+========================= */
+
+.btn {
+    display: block; /* ❗ оставляем */
+    width: max-content;
+    margin: 30px auto;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+/* primary */
+.btn-primary {
+    background: #1f3b57;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #163047;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   ACTIONS (🔥 ТВОЙ ВАРИАНТ)
+========================= */
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* 🔥 ПЕРЕОПРЕДЕЛЯЕМ ГЛОБАЛЬНЫЙ .btn */
+.actions .btn {
+    display: flex;
+
+    width: 40px;
+    height: 30px;
+
+    padding: 0;
+    margin: 0 0 5px 0;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.actions .btn-outline-warning i {
+    color: #f0ad4e;
+    font-size: 16px;
+
+}
+
+/* удаление (красная кнопка) */
+.actions .btn-outline-danger i {
+
+    color: #dc3545;
+    font-size: 16px;
+
+}
+
+

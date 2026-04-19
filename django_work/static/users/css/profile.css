@@ -1,0 +1,71 @@
+body {
+    background: #f6f7fb;
+}
+
+.profile-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* card */
+.profile-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* header */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-header a {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* info */
+.profile-info p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.profile-info span {
+    font-weight: bold;
+    color: #1f3b57;
+}
+
+/* blogs */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.blog-list a {
+    padding: 10px;
+    background: #f6f7fb;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1f3b57;
+    transition: 0.2s;
+}
+
+.blog-list a:hover {
+    background: #e9eef7;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+    .profile-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

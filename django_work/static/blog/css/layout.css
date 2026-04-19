@@ -1,0 +1,173 @@
+/* =========================
+   GLOBAL BACKGROUND
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        90deg,
+        #f6f7fb 0%,
+        #eef2ff 50%,
+        #f7f9ff 100%
+    );
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* декоративные blur */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    opacity: 0.45;
+}
+
+body::before {
+    background: #7c9cff;
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    background: #ff6b9c;
+    bottom: -180px;
+    right: -180px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    z-index: 1000;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.left_side {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.right_side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.log_out_form {
+    margin: 0;
+}
+
+/* =========================
+   GLOBAL CAPSULE BUTTON FIX
+========================= */
+
+/* 🔥 ВСЕ bootstrap кнопки */
+.btn {
+    border-radius: 999px !important;   /* капсула */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 16px;
+
+    gap: 6px;
+
+    transition: 0.25s ease;
+}
+
+/* hover эффект */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* иконки внутри кнопок */
+.btn i {
+    font-size: 14px;
+}
+
+/* =========================
+   LINKS (username и т.д.)
+========================= */
+
+.right_side a {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* =========================
+   FIX FORM BUTTON (logout)
+========================= */
+
+.log_out_form button {
+    border-radius: 999px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   HEADER TITLE
+========================= */
+
+.middle a {
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .middle {
+        display: none;
+    }
+
+    .left_side,
+    .right_side {
+        gap: 6px;
+    }
+}

@@ -1,0 +1,30 @@
+{% extends 'blog/layout.html' %}
+{% load static %}
+
+{% block title %}Вход{% endblock %}
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'users/css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+
+    <div class="auth-card">
+
+        <h1>Вход в аккаунт</h1>
+        <p>Введите данные для входа</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Войти</button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

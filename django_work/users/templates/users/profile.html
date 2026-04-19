@@ -1,0 +1,51 @@
+{% extends 'blog/layout.html' %}
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-wrapper">
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+            <h2>Профиль пользователя</h2>
+            <a href="{% url 'users:profile_update' %}">✏️</a>
+        </div>
+
+        <div class="profile-info">
+            <p><span>Username:</span> {{ user.username|default:"---" }}</p>
+            <p><span>Email:</span> {{ user.email|default:"---" }}</p>
+            <p><span>Имя:</span> {{ user.first_name|default:"---" }}</p>
+            <p><span>Фамилия:</span> {{ user.last_name|default:"---" }}</p>
+            <p><span>Регистрация:</span> {{ user.date_joined }}</p>
+        </div>
+
+    </div>
+
+    <div class="profile-card">
+
+        <h2>Мои статьи</h2>
+
+        {% if user_blogs %}
+            <div class="blog-list">
+                {% for blog in user_blogs %}
+                    <a href="{% url 'blog:blog_detail' blog.id %}">
+                        {{ blog.title }}
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>У вас пока нет статей</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

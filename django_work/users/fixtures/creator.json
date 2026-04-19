@@ -1,0 +1,23 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields" : {
+      "username": "creator",
+      "password": "django-insecure-4+#b)nocdhmp3a2$2&m0b4b=off0)0fo@req4&4m8=98bs_ckv",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "vbbf@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-12-01T12:00:00Z",
+      "groups": [],
+      "user_permissions": [
+        25
+      ]
+    }
+
+  }
+]

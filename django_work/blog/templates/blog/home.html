@@ -1,0 +1,58 @@
+{% extends 'blog/layout.html' %}
+{% load static %}
+
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<p>{{ site_description }}</p>
+
+<hr>
+
+<h2>Последние новости</h2>
+
+<div class="list">
+    {% for blog in latest_blogs %}
+        <div class="blog-card">
+
+            <img src="{{ blog.Image.url }}" alt="{{ blog.title }}">
+
+            <a href="{{ blog.get_absolute_url }}">
+                {{ blog.title }}
+            </a>
+
+            <p>{{ blog.content|truncatechars:120 }}</p>
+
+            <small>{{ blog.date_published }}</small>
+
+
+            {% if request.user.is_superuser %}
+            <div class="actions">
+
+                <a class="btn btn-outline-warning" style=""
+                   href="{% url 'blog:update_blog' pk=blog.id %}">
+                    <i class="fa fa-edit"></i>
+                </a>
+
+                <a class="btn btn-outline-danger"
+                   href="{% url 'blog:delete_blog' pk=blog.id %}">
+                    <i class="fa fa-trash"></i>
+                </a>
+
+            </div>
+            {% endif %}
+
+        </div>
+    {% endfor %}
+</div>
+
+<a href="{% url 'blog:index' %}" class="btn btn-primary">
+    Все новости
+</a>
+
+{% endblock %}

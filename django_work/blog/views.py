@@ -180,7 +180,7 @@ def contacts(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        # 💾 СОХРАНЕНИЕ В БАЗУ
+        
         ContactMessage.objects.create(
             name=name,
             email=email,
